@@ -13,7 +13,7 @@ namespace EarthOnline.Desktop.Dialogs;
 public static class SponsorDialog
 {
     /// <summary>赞助者名单：与 Web / Android 三端同一名单、同一顺序（勿加修饰词）。</summary>
-    private const string SponsorsLine = "海神唐三 · Seastar · 清浅";
+    private const string SponsorsLine = "海神唐三 · Seastar · 清浅 · 𝓛𝓾𝓬𝓲𝓯𝓮𝓻 · Cyou2";
 
     public static void Show()
     {

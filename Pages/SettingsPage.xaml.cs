@@ -268,7 +268,7 @@ public partial class SettingsPage : Page
         AboutVersionText.Text = $"版本 v{UpdateService.CurrentVersion} · 数据目录：{AppPaths.RootDir}";
         AboutTechText.Text = $"技术栈：C# / .NET {Environment.Version} · WPF · SQLite（本地）　数据目录：{AppPaths.RootDir}";
         // 赞助者：与 Web / Android 三端同一名单、同一顺序（勿加「首席 / 不分先后」等修饰词）
-        AboutSponsorsText.Text = "❤️ 赞助者：海神唐三 · Seastar · 清浅";
+        AboutSponsorsText.Text = "❤️ 赞助者：海神唐三 · Seastar · 清浅 · 𝓛𝓾𝓬𝓲𝓯𝓮𝓻 · Cyou2";
         // 初始化期间会触发 Checked/Unchecked，先挂再设值的顺序由 _suppressGeneral 保证
         _suppressGeneral = true;
         try { AutoStartBox.IsChecked = AutoStartService.IsEnabled(); }
