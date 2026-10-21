@@ -19,6 +19,16 @@ public static class ChangelogDialog
         var root = new StackPanel();
 
         root.Children.Add(VersionBlock(
+            "v1.0.6 · 液态玻璃与 AI 中枢",
+            new[]
+            {
+                "版本号与 Android / Web 三端统一为 v1.0.6",
+                "赞助名单同步为五人：海神唐三 · Seastar · 清浅 · 𝓛𝓾𝓬𝓲𝓯𝓮𝓻 · Cyou2",
+                "视觉规范对齐移动端：卡片统一圆角与玻璃质感，直角溢出全部清零",
+                "更新日志补齐 v1.0.6 全量说明（液态玻璃 UI / 透明度自定义 / 笔记重构 / AI 中枢 / 图标更新）"
+            }));
+
+        root.Children.Add(VersionBlock(
             "v1.0.3 · 视觉统一与数据目录",
             new[]
             {

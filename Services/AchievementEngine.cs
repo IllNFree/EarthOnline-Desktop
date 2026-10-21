@@ -39,6 +39,10 @@ public static class AchievementEngine
         public int RecordStreak { get; set; }
         public int EmojiOnlyMemos { get; set; }
         public int NewYearBirth { get; set; }
+        /// <summary>v1.0.6：正文 ≥300 字的「长文」笔记条数（笔记系统重构）。</summary>
+        public int LongMemos { get; set; }
+        /// <summary>v1.0.6：卡片 / 壁纸不透明度是否被调过（0 / 1，外观自定义）。</summary>
+        public int AppearanceTuned { get; set; }
     }
 
     public sealed class AutoRule
@@ -109,6 +113,12 @@ public static class AchievementEngine
             Test=s=>s.TasksDone>=20 && s.Items>=20 && s.Collections>=10 && s.Memos>=10 && s.Locations>=5 },
         new AutoRule { Key="grand_slam", Title="大满贯", Desc="任务 / 物品 / 收藏 / 日志 / 足迹各达到 20", Category="general", Goal=5,
             Current=s=>MultiCount(s,20), Test=s=>MultiCount(s,20)==5 },
+
+        // ————— v1.0.6：新功能成就（笔记系统重构 / 外观自定义；跨端 canonical） —————
+        new AutoRule { Key="notes_hundred", Title="百篇成册", Desc="累计写下 100 条笔记", Category="memo", Goal=100, Current=s=>s.Memos },
+        new AutoRule { Key="memo_long", Title="长文作者", Desc="写下第一条正文 ≥300 字的笔记", Category="memo", Goal=1, Current=s=>s.LongMemos },
+        new AutoRule { Key="glass_tuner", Title="手感调校师", Desc="第一次调整卡片或壁纸不透明度", Category="general", Goal=1,
+            Current=s=>s.AppearanceTuned, Test=s=>s.AppearanceTuned>0 },
 
         // ————— 彩蛋（未解锁时 UI 打码） —————
         new AutoRule { Key="egg_walmart", Title="购物袋玩家", Desc="把性别设置成「沃尔玛购物袋」", Category="egg", Goal=1,
@@ -237,7 +247,10 @@ public static class AchievementEngine
             Gender = profile?.Gender ?? "",
             BlankTitleTries = SettingsStore.Load().BlankTitleTries,
             ThrowbackSeen = Math.Max(0, SettingsStore.Load().ThrowbackSeen),
-            MemoryPhotos = Math.Max(0, SettingsStore.Load().MemoryPhotos)
+            MemoryPhotos = Math.Max(0, SettingsStore.Load().MemoryPhotos),
+            // v1.0.6：长文笔记条数 + 外观是否被动过（壁纸不透明度默认 1.0）
+            LongMemos = memos.Count(m => (m.Text ?? "").Length >= 300),
+            AppearanceTuned = Math.Abs(SettingsStore.Load().WallpaperOpacity - 1.0) > 0.0001 ? 1 : 0
         };
 
         // 存活天数 / 周岁
