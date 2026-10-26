@@ -204,7 +204,7 @@ public partial class SettingsPage : Page
         {
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
             {
-                FileName = "https://github.com/FreeMentalIllness/EarthOnline-Desktop",
+                FileName = "https://github.com/IllNFree/EarthOnline-Desktop",
                 UseShellExecute = true
             });
         }
@@ -221,7 +221,7 @@ public partial class SettingsPage : Page
         {
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
             {
-                FileName = "https://github.com/FreeMentalIllness/EarthOnline-Desktop/issues",
+                FileName = "https://github.com/IllNFree/EarthOnline-Desktop/issues",
                 UseShellExecute = true
             });
         }
@@ -511,7 +511,7 @@ public partial class SettingsPage : Page
         {
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
             {
-                FileName = "https://github.com/FreeMentalIllness/EarthOnline-Desktop/releases",
+                FileName = "https://github.com/IllNFree/EarthOnline-Desktop/releases",
                 UseShellExecute = true
             });
         }
