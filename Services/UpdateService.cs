@@ -11,15 +11,15 @@ using EarthOnline.Desktop.Dialogs;
 namespace EarthOnline.Desktop.Services;
 
 /// <summary>
-/// 检查更新：对接 GitHub Releases（FreeMentalIllness/EarthOnline-Desktop）。
+/// 检查更新：对接 GitHub Releases（IllNFree/EarthOnline-Desktop）。
 /// 以 csproj 的 &lt;Version&gt; 为当前版本，与 latest release 的 tag（v1.0.0 格式）比较。
 /// 发现新版本时支持应用内下载（%TEMP%\EarthOnline_Update.exe）并生成 update.bat
 /// 无人值守替换当前 exe 后自动重启，全程无需手动操作。
 /// </summary>
 public static class UpdateService
 {
-    private const string LatestApi = "https://api.github.com/repos/FreeMentalIllness/EarthOnline-Desktop/releases/latest";
-    private const string ReleasesPage = "https://github.com/FreeMentalIllness/EarthOnline-Desktop/releases";
+    private const string LatestApi = "https://api.github.com/repos/IllNFree/EarthOnline-Desktop/releases/latest";
+    private const string ReleasesPage = "https://github.com/IllNFree/EarthOnline-Desktop/releases";
     private const string TempUpdateExe = "EarthOnline_Update.exe";
 
     /// <summary>当前程序版本（取自 csproj Version，形如 1.0.0）。</summary>
